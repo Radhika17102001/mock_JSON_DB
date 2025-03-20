@@ -8,17 +8,8 @@ const PORT = process.env.PORT;
 app.set('view engine','ejs');
 app.set('views','./views');
 
-//middleware
-app.use((req, res, next)=>{
-    const time = new Date();
-    console.log(time, req.url, req.method);
-
-    next();
-});
-
-app.get('/home',(req,res)=>{
-   console.log('this is always triggered secondly');
-});
+//middleware to serve static files
+app.use(express.static('public'));
 
 app.listen(PORT,()=>{
     console.log(`connected on port: ${PORT}`);

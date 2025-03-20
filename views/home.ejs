@@ -19,7 +19,7 @@
 
             <input type="text" id="email" placeholder="Email:" required />
 
-            <button type="submit">Add User</button>
+            <button type="submit" onclick="updateUser()"> Edit User</button>
 
         </form>
 
@@ -48,5 +48,32 @@
         </form>
 
     </body>
+
+    <script>
+        function updateUser(){
+            const dleteUserForm = document.getElementById('EditUserForm');
+
+            //grab id value from the form input
+            const id = document.getElementById('edit_id').value;
+
+            // insert the id into the action attribute
+            EditUserForm.action = '/user' + id + '/update';
+
+            //submit the form
+            editUserForm.submit();
+        }
+
+
+        function deleteUser(){
+            //Grab the delete user form
+            const deleteUserForm = document.getElementById('deleteUserForm');
+            //Grab the id from the input form
+            const id = document.getElementById('delete_id').value;
+            //Insert the id into the action attribute
+            deleteUserForm.action = '/users/' + id + '/delete';
+            //Submit the form
+            deleteUserForm.submit();
+        }
+    </script>
 
 </html>
