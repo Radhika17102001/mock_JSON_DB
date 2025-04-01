@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {createUser}= require('../controllers/userControl.js')
+const {createUser}= require('../controllers/userController.js')
 
 
 //Router handler for our home page
